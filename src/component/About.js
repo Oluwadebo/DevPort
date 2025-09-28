@@ -3,14 +3,6 @@ import React from 'react';
 const About = () => {
   return (
     <div>
-      {/* <section className="container py-5" id="about">
-        <h2 className="text-center mb-4">About Me</h2>
-        <p className="text-center">
-          I am a passionate web developer with experience in building modern web
-          applications using React, Bootstrap, and other technologies. I love
-          creating clean, responsive, and user-friendly designs.
-        </p>
-      </section> */}
       <section id="about" className="py-5 bg-light">
         <div className="container">
           <div className="row align-items-center">

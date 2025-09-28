@@ -12,21 +12,11 @@ const Skills = () => {
 
   return (
     <div>
-      {/* <section className="bg-light text-dark py-5" id="skills">
-        <div className="container">
-          <h2 className="text-center mb-4">Skills</h2>
-          <div className="row text-center">
-            {skills.map((skill, index) => (
-              <div key={index} className="col-6 col-md-4 mb-3">
-                <div className="card shadow-sm p-3">
-                  <h5>{skill}</h5>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-      <section id="skills" className="py-5">
+      <section
+        id="skills"
+        className="py-5 text-light"
+        style={{ background: '#0d1b2a' }}
+      >
         <div className="container">
           <h2 className="text-center fw-bold mb-5">Skills</h2>
           <div className="row">
@@ -35,9 +25,9 @@ const Skills = () => {
                 <h6 className="fw-bold">{skill.name}</h6>
                 <div className="progress">
                   <div
-                    className="progress-bar bg-primary"
+                    className="progress-bar"
                     role="progressbar"
-                    style={{ width: skill.level }}
+                    style={{ width: skill.level, background: '#00bcd4' }}
                     aria-valuenow={parseInt(skill.level)}
                     aria-valuemin="0"
                     aria-valuemax="100"
