@@ -1,8 +1,5 @@
 import './App.css';
 import React, { useEffect } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
-import Dashboard from './component/dashboard';
-import NotFound from './component/notfound';
 import Hero from './component/Hero';
 import About from './component/About';
 import Skills from './component/Skills';
@@ -25,25 +22,8 @@ function App() {
       <About />
       <Skills />
       <Projects />
-      {/* <Contact /> */}
+      <Contact />
       <Footer />
-      <Routes>
-        {/* <Route path="/" element={<Navbar />} /> */}
-        <Route path="/Navbar" element={<Navigate to="/" />} />
-        <Route path="/Hero" element={<Hero />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Skills" element={<Skills />} />
-        <Route path="/Contact" element={<Contact />} />
-        <Route path="/Footer" element={<Footer />} />
-        {/* <Route path="*" element={<NotFound />} /> */}
-        {/* <Route path="/Registration" element={<Registration />} />
-        <Route path="/Ordered" element={<Ordered />} />
-        <Route path="/RegistAdmin" element={<RegistAdmin />} />
-        <Route path="/Addtocart" element={<Addtocart />} />
-        <Route path="/Admin" element={<Admin />} />
-        <Route path="/Viewproduct" element={<Viewproduct />} /        
-         */}
-      </Routes>
     </>
   );
 }

@@ -2,7 +2,12 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 }
@@ -15,8 +20,27 @@ a {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
+a:hover {
+  color: #64ffda; /* Accent color that stands out on #0d1b2a */
+  transition: color 0.3s ease;
+  transform: scale(1.2);
+  text-shadow: 0 0 8px #64ffda, 0 0 16px #64ffda; 
+}
+.text-cyan {
+  color: #00bcd4 !important;
+}
+
+.btn-cyan {
+  background-color: #00bcd4;
+  border: none;
+}
+
+.btn-cyan:hover {
+  background-color: #0097a7;
+}
+
 .App {
   text-align: center;
 }

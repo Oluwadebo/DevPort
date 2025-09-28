@@ -31,7 +31,7 @@ const Contact = () => {
           </a>
         </div>
       </section> */}
-      <section id="contact" className="py-5 bg-light">
+      <section id="contact" className="py-5 text-white"  style={{ background: '#0d1b2a' }}>
         <div className="container">
           <h2 className="text-center fw-bold mb-5">Contact Me</h2>
           <div className="row justify-content-center">
