@@ -22,7 +22,7 @@ function App() {
     <>
       <Navbar />
       <Hero />
-      {/* <About /> */}
+      <About />
       {/* <Skills /> */}
       {/* <Projects /> */}
       {/* <Contact /> */}
