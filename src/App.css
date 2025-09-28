@@ -1,5 +1,42 @@
+/* === THEME COLORS === */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #0d1b2a;
+  --primary-color: #00bcd4;
+  --accent-color: #ffb703;
+  --glow-color: #64ffda;
+  --primary-dark: #0d1b2a;
+  --primary-accent: #00bcd4;
+  --primary-hover: #0097a7;
+  --highlight-glow: #64ffda;
+  --secondary-accent: #ffb703; /* gold/orange balance */
+  --light-text: #ffffff;
+  --bs-primary: var(--primary-accent); /* Override Bootstrap primary */
+  --bs-primary-rgb: 0, 188, 212;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0d1b2a;
+  --text-color: #e0e0e0;
+  --primary-color: #00bcd4;
+  --accent-color: #ffb703;
+  --glow-color: #64ffda;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+.navbar, footer {
+  background-color: var(--bg-color);
+}
+/* === GLOBAL TYPOGRAPHY === */
 body {
   font-family: 'Roboto', sans-serif;
+  background: var(--primary-dark);
+  color: var(--light-text);
+  text-align: justify;
 }
 
 h1,
@@ -11,71 +48,138 @@ h6 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 }
-p {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-}
+
+/* === LINKS === */
 a {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   text-decoration: none;
+  color: var(--light-text);
   transition: color 0.3s ease, transform 0.3s ease;
 }
+
 a:hover {
-  color: #64ffda; /* Accent color that stands out on #0d1b2a */
-  transition: color 0.3s ease;
-  transform: scale(1.2);
-  text-shadow: 0 0 8px #64ffda, 0 0 16px #64ffda; 
-}
-.text-cyan {
-  color: #00bcd4 !important;
+  color: var(--highlight-glow);
+  transform: scale(1.15);
+  text-shadow: 0 0 8px var(--highlight-glow), 0 0 16px var(--highlight-glow);
 }
 
+/* === BUTTONS === */
+.btn-primary {
+  background-color: var(--primary-accent);
+  border-color: var(--primary-accent);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-accent);
+  border-color: var(--primary-accent);
+}
+
+.btn-outline-light:hover {
+  background-color: var(--primary-accent);
+  border-color: var(--primary-accent);
+  color: var(--light-text);
+}
+
+/* Custom cyan button (if needed) */
 .btn-cyan {
-  background-color: #00bcd4;
+  background-color: var(--primary-accent);
   border: none;
 }
-
 .btn-cyan:hover {
-  background-color: #0097a7;
+  background-color: var(--primary-hover);
 }
 
-.App {
-  text-align: center;
+/* === NAVBAR === */
+.navbar {
+  background-color: var(--primary-dark) !important;
+}
+.navbar .nav-link {
+  color: var(--light-text) !important;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--highlight-glow) !important;
+  text-shadow: 0 0 8px var(--highlight-glow);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* === HERO === */
+#hero {
+  background: var(--primary-dark);
+  color: var(--light-text);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* === ABOUT SECTION === */
+#about {
+  background: #f8f9fa; /* light background for contrast */
+  color: #000;
+}
+#about .btn-primary {
+  background-color: var(--secondary-accent);
+  border-color: var(--secondary-accent);
+}
+#about .btn-primary:hover {
+  background-color: var(--secondary-accent);
+  border-color: #e09c00;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* === SKILLS === */
+#skills {
+  background: var(--primary-dark);
+  color: var(--light-text);
+}
+.progress {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+.progress-bar {
+  background: var(--primary-accent);
 }
 
-.App-link {
-  color: #61dafb;
+/* === PROJECT CARDS === */
+.card.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card.glass-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+.card .btn-outline-dark {
+  border-color: var(--light-text);
+  color: var(--light-text);
+}
+.card .btn-outline-dark:hover {
+  background-color: var(--primary-accent);
+  border-color: var(--primary-accent);
+  color: var(--light-text);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* === CONTACT === */
+#contact {
+  background: var(--primary-dark);
+  color: var(--light-text);
+}
+#contact .form-control {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--light-text);
+}
+#contact .form-control:focus {
+  border-color: var(--primary-accent);
+  box-shadow: 0 0 5px var(--primary-accent);
+}
+
+/* === FOOTER === */
+footer {
+  background: var(--primary-dark);
+  color: var(--light-text);
+}
+footer a {
+  color: var(--light-text);
+}
+footer a:hover {
+  color: var(--highlight-glow);
 }
