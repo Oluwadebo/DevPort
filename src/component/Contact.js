@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const Contact = () => {
-  const [message, setMessage] = useState(""); 
-  const [messageType, setMessageType] = useState(""); 
+  const [message, setMessage] = useState('');
+  const [messageType, setMessageType] = useState('');
   const [loading, setLoading] = useState(false);
 
   const validateEmail = (email) => {
-    // Basic email regex
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
   };
@@ -18,17 +17,15 @@ const Contact = () => {
     const email = form.email.value.trim();
     const msg = form.message.value.trim();
 
-    // Check for empty fields
     if (!name || !email || !msg) {
-      setMessage("Please fill in all fields.");
-      setMessageType("error");
+      setMessage('Please fill in all fields.');
+      setMessageType('error');
       return resetMessage();
     }
 
-    // Check email format
     if (!validateEmail(email)) {
-      setMessage("Please enter a valid email address.");
-      setMessageType("error");
+      setMessage('Please enter a valid email address.');
+      setMessageType('error');
       return resetMessage();
     }
 
@@ -36,42 +33,40 @@ const Contact = () => {
 
     try {
       const formData = new FormData(form);
-      const response = await fetch("https://formspree.io/f/mwprvgbk", {
-        method: "POST",
+      const response = await fetch('https://formspree.io/f/mwprvgbk', {
+        method: 'POST',
         body: formData,
         headers: {
-          Accept: "application/json",
+          Accept: 'application/json',
         },
       });
 
       if (response.ok) {
-        setMessage("Your message has been sent successfully!");
-        setMessageType("success");
+        setMessage('Your message has been sent successfully!');
+        setMessageType('success');
         form.reset();
       } else {
         const data = await response.json();
-        // Show Formspree error if available
         if (data.errors && data.errors.length > 0) {
-          setMessage(data.errors.map(err => err.message).join(", "));
+          setMessage(data.errors.map((err) => err.message).join(', '));
         } else {
-          setMessage("Failed to send message. Please try again later.");
+          setMessage('Failed to send message. Please try again later.');
         }
-        setMessageType("error");
+        setMessageType('error');
       }
     } catch (error) {
-      setMessage("Network error. Please check your connection and try again.");
-      setMessageType("error");
+      setMessage('Network error. Please check your connection and try again.');
+      setMessageType('error');
     }
 
     setLoading(false);
     resetMessage();
   };
 
-  // Hide message after 5 seconds
   const resetMessage = () => {
     setTimeout(() => {
-      setMessage("");
-      setMessageType("");
+      setMessage('');
+      setMessageType('');
     }, 10000);
   };
 
@@ -84,8 +79,10 @@ const Contact = () => {
             {message && (
               <div
                 className={`alert ${
-                  messageType === "success" ? "alert-success" : "alert-danger"
+                  messageType === 'success' ? 'alert-success' : 'alert-danger'
                 } text-center`}
+                role="alert"
+                aria-live="polite"
               >
                 {message}
               </div>
@@ -126,7 +123,7 @@ const Contact = () => {
                 className="btn btn-primary w-100 w-md-auto"
                 disabled={loading}
               >
-                {loading ? "Sending..." : "Send Message"}
+                {loading ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>

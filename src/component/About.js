@@ -7,8 +7,8 @@ const About = () => {
         <div className="row align-items-center">
           <div className="col-12 col-md-4 text-center mb-4 mb-md-0">
             <img
-              src="images/debo.png"
-              alt="Ogunwe Debo"
+              src="images/profile.png"
+              alt="Ogunwe Debo Profile Picture"
               className="img-fluid rounded-circle shadow-sm"
             />
           </div>

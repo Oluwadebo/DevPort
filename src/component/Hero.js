@@ -17,7 +17,7 @@ const Hero = () => {
             color: { value: '#00bcd4' },
             links: { enable: true, color: '#00bcd4' },
             move: { enable: true, speed: 1 },
-            number: { value: 50 },
+            number: { value: window.innerWidth < 768 ? 25 : 50 },
           },
         }}
         style={{
@@ -33,18 +33,20 @@ const Hero = () => {
           Hello, I’m <span style={{ color: '#00bcd4' }}>OGUNWE DEBO</span>
         </h1>
         <p className="lead mt-2">
-          Crafting Digital Experiences That Inspire & Solve Real Problems
+          Crafting modern web experiences that inspire, engage, and deliver real
+          value.
         </p>
         <h2 className="h4 mt-3">
           <ReactTyped
             strings={[
-              'Web Developer',
-              'UI/UX Designer',
-              'Creative Innovator',
-              'Problem Solver',
+              'Full-Stack Web Developer',
+              'Creative Digital Innovator',
+              'UI/UX Design Enthusiast',
+              'Strategic Problem Solver',
             ]}
-            typeSpeed={100}
-            backSpeed={50}
+            typeSpeed={80}
+            backSpeed={40}
+            backDelay={1500} 
             loop
           />
         </h2>
@@ -53,8 +55,8 @@ const Hero = () => {
             href="#projects"
             className="btn btn-primary fw-semibold text-white px-4"
           >
-            Explore My Work <i className="fas fa-arrow-right animate__animated animate__bounce animate__infinite"></i>
-    
+            Explore My Work{' '}
+            <i className="fas fa-arrow-right animate__animated animate__bounce animate__infinite"></i>
           </a>
           <a
             href="/Ogunwe_Debo_CV.pdf"

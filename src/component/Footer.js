@@ -13,18 +13,24 @@ const Footer = () => {
           target="_blank"
           rel="noreferrer"
           className="text-white me-3 fs-4"
+          aria-label="GitHub Profile"
         >
           <i className="bi bi-github"></i>
         </a>
         <a
-          href="https://linkedin.com/in/yourlinkedin"
+          href="#"
           target="_blank"
           rel="noreferrer"
           className="text-white me-3 fs-4"
+          aria-label="LinkedIn Profile"
         >
           <i className="bi bi-linkedin"></i>
         </a>
-        <a href="mailto:ogunweoluwadebo1@gmail.com" className="text-white fs-4">
+        <a
+          href="mailto:ogunweoluwadebo1@gmail.com"
+          className="text-white fs-4"
+          aria-label="Send me an Email"
+        >
           <i className="bi bi-envelope"></i>
         </a>
       </div>
